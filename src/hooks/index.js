@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import services from '../services'
 
 export const useField = (type) => {
   const [value, setValue] = useState('')
@@ -25,19 +24,25 @@ export const useResource = (baseUrl) => {
   }
 
   useEffect(() => {
-    // services.getAll(baseUrl).then((all) => setResources(all))
-    getAll(baseUrl).then((all) => setResources(all))
-  }, [])
+    getAll().then((all) => setResources(all))
+  }, [baseUrl])
 
-  const create = (resource) => {
-    services.create(baseUrl, resource)
-    //   .then(...resources, resources.concat(resource))
+  const createOne = async (resource) => {
+    const response = await axios.post(baseUrl, resource)
+    return response.data
   }
 
-  //   const create = async (resource) => {
-  //     const response = await axios.post(baseUrl, resource)
-  //     return response.data
-  //   }
+  const create = async (resource) => {
+    console.log(resource)
+    try {
+      const newResource = await createOne(resource)
+      console.log(newResource)
+      setResources([...resources, newResource])
+    } catch (error) {
+      console.error('Error creating resource:', error)
+      console.log(error)
+    }
+  }
 
   const service = {
     create,

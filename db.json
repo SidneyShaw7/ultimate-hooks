@@ -1,4 +1,51 @@
 {
-  "notes": [{ "content": "hui, pisda, jigurda" }],
-  "persons": [{ "name": "nikita", "number": 999999 }]
+  "notes": [
+    {
+      "id": 1,
+      "content": "custom-hooks are awesome!"
+    },
+    {
+      "id": 2,
+      "content": "best feature ever <3"
+    },
+    {
+      "content": "asdasd",
+      "id": 3
+    },
+    {
+      "content": "asdasdasdasd",
+      "id": 4
+    },
+    {
+      "id": 5
+    }
+  ],
+  "persons": [
+    {
+      "id": 1,
+      "name": "mluukkai",
+      "number": "040-5483923"
+    },
+    {
+      "id": 2,
+      "name": "hellas",
+      "number": "012-123123"
+    },
+    {
+      "name": "asdad",
+      "number": "asdads",
+      "id": 3
+    },
+    {
+      "name": "asdasdasd",
+      "number": "asdadsad",
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    }
+  ]
 }
